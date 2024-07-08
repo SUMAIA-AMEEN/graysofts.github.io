@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!-- Coding by CodingLab | www.codinglabweb.com-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GraySoft</title>
+    <link rel="icon" href="LOGO.png" />
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="container">
+
+      <!-- <img src="LOGO.png" class="logo" width="150" height="150"> -->
+
+      <img src="BG.png" alt="" class="image" />
+      <header>We're <span> Launching </span> Soon</header>
+      <!-- <p>
+        Our website is under construction. We're working hard to improve it
+        and we'll be ready to launch after.
+      </p> -->
+
+      <div class="time-content">
+        <div class="time days">
+          <span class="number">
+            <p id="days">00</p>
+          </span>
+          <span class="text">days</span>
+        </div>
+        <div class="time hours">
+          <span class="number">
+            <p id="hours">00</p>
+          </span>
+          <span class="text">hours</span>
+        </div>
+        <div class="time minutes">
+          <span class="number">
+            <p id="minutes">00</p>
+          </span>
+          <span class="text">minutes</span>
+        </div>
+        <div class="time seconds">
+          <span class="number">
+            <p id="seconds">00</p>
+          </span>
+          <span class="text">seconds</span>
+        </div>
+      </div>
+
+    </section>
+
+    <script >
+       var countDown= new Date("01/01/2025 00:00:00").getTime();
+       var x = setInterval(function(){
+        var now = new Date().getTime();
+        var distance = countDown - now;
+
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("minutes").innerHTML = minutes;
+        document.getElementById("seconds").innerHTML = seconds;
+
+
+       },1000)
+       
+       
+
+    </script>
+
+  </body>
+</html>
